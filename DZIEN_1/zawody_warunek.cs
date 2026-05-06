@@ -71,6 +71,64 @@ namespace complex_warunek
             {
                 Console.WriteLine("Zamówienie może być zrealizowane.");
             }
+
+            Console.WriteLine("______________________________________");
+            Console.WriteLine("Analiza problemów z autoryzacją dostępu ... ");
+
+            string login = "admin";
+            string password = "abc123";
+            bool accountActive = true;
+            bool twoFactorEnabled = false;
+            string twoFactorCode = "999999";
+
+            if (login == "admin")
+            {
+
+                if (password == "abc123")
+                {
+                    Console.WriteLine("Hasło poprawne.");
+
+                    if (accountActive)
+                    {
+                        Console.WriteLine("Konto jest aktywne... ");
+                        if (twoFactorEnabled)
+                        {
+                            Console.WriteLine("Weryfikacja dwuetapowa włączona... ");
+                            if (twoFactorCode == "999999")
+                            {
+                                Console.WriteLine("Kod dwuetapowy poprawny. Dostęp przyznany.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Kod dwuetapowy niepoprawny. Dostęp odrzucony.");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Weryfikacja dwuetapowa wyłączona. Dostęp przyznany.");
+                        }
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("Konto nie jest aktywne. Dostęp odrzucony.");
+
+                    }
+
+
+                }
+                else
+                {
+                    Console.WriteLine("Hasło niepoprawne. Dostęp odrzucony.");
+                }
+
+
+            }
+            else
+            {
+                Console.WriteLine("Login niepoprawny. Dostęp odrzucony.");
+
+            }
         }
     }
 }
