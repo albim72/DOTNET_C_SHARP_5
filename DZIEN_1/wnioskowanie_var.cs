@@ -26,7 +26,21 @@ namespace wnioskowanie_var
             foreach (var course in courses)
             {
                 Console.WriteLine($"- {course}");
-            }   
+            }
+
+            //Zadanie 4: zużuycie var w pętli foreach i w LINQ
+            //Kompilator rozpoznaje  że numbers to List<int> 
+            var numbers = new List<int> { 4, 7, 12, 19, 24, 31, 40 };
+
+            //where wybiera liczby kóre spełniają warunek.
+            var evenNumbers = numbers.Where(n => n % 2 == 0);
+
+            foreach (var number in evenNumbers)
+            {
+                Console.WriteLine($"Parzysta liczba: {number}");
+
+
+            }
         }
     }
 }
