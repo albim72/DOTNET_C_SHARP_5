@@ -16,6 +16,16 @@ namespace wyliczenia
             Delivered,
             Cancelled
         }
+
+        enum UserRole
+        {
+            Admin,
+            User,
+            Guest,
+            Moderator,
+            Administrator 
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Zadanie 5: status zamówienia");
@@ -42,6 +52,32 @@ namespace wyliczenia
                     Console.WriteLine("Nieznany status zamówienia.");
                     break;
             }
+
+            UserRole role = UserRole.User;
+            switch(role)
+            {
+                case UserRole.Guest:
+                    Console.WriteLine("Rola: Gość. Może przeglądac publiczne treści...");
+                    break;
+
+                case UserRole.User:
+                    Console.WriteLine("Rola: Użytkownik. Może przeglądać i komentować treści...");
+                    break;
+
+                case UserRole.Moderator:
+                    Console.WriteLine("Rola: Moderator. Może zarządzać treściami i użytkownikami...");
+                    break;
+                case UserRole.Administrator:
+                    Console.WriteLine("Rola: Administrator. Ma pełne uprawnienia...");
+                    break;
+
+                default:
+                    Console.WriteLine("Nieznana rola użytkownika.");
+                    break;
+            }
+
+
+
         } 
     
     }
