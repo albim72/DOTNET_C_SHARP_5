@@ -47,5 +47,21 @@ namespace Studenci_obiekty
             
             return oceny.Average();
         }
+
+        //metoda sprawdzająca, czy student zaliczył przedmiot (średnia >= 3)
+        public bool CzyZaliczyl()
+        {
+            return ObliczSrednia() >= 3;
+        }
+
+        //metoda wyświetlająca informacje o studencie
+        public void WyswietlInformacje()
+        {
+            Console.WriteLine($"Imię: {Imie}");
+            Console.WriteLine($"Nazwisko: {Nazwisko}");
+            Console.WriteLine($"Wiek: {Wiek}");
+            Console.WriteLine($"Średnia ocen: {ObliczSrednia():F2}");
+            Console.WriteLine($"Zaliczył przedmiot: {(CzyZaliczyl() ? "Tak" : "Nie")}");
+        }
     }
 }
