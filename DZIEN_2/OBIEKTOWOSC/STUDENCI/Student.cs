@@ -37,6 +37,15 @@ namespace Studenci_obiekty
             
         }
 
-
+        //metoda obliczająca średnią ocen
+        public double ObliczSrednia()
+        {
+            if (oceny.Count == 0)
+            {
+                return 0; // brak ocen, średnia to 0
+            }
+            
+            return oceny.Average();
+        }
     }
 }
