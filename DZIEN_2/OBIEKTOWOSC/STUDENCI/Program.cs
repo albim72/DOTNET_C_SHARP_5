@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +38,40 @@ namespace Studenci_obiekty
             student5.DodajOcene(2);
             student5.DodajOcene(2);
             student5.DodajOcene(1);
+
+            //Tworzenie listy studentów
+            List<Student> studenci = new List<Student>();
+
+            studenci.Add(student1);
+            studenci.Add(student2);
+            studenci.Add(student3);
+            studenci.Add(student4);
+            studenci.Add(student5);
+
+            Console.WriteLine("\nLista studentów:");
+            foreach (Student student in studenci)
+            {
+                student.WyswietlInformacje();
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("Najlepszy student:");
+
+            Student najlepszyStudent = ZnajdzNajlepszegoStudenta(studenci);
+            najlepszyStudent.WyswietlInformacje();
+
+            static Student ZnajdzNajlepszegoStudenta(List<Student> studenci)
+            {
+                Student najlepszy = studenci[0];
+                foreach (Student student in studenci)
+                {
+                    if (student.ObliczSrednia() > najlepszy.ObliczSrednia())
+                    {
+                        najlepszy = student;
+                    }
+                }
+                return najlepszy;
+            }
         }
     }
 }
