@@ -28,8 +28,16 @@ namespace TrzyKonstruktory
             Wiek = 0;
         }
 
+        //konstruktor z dwoma parametrami
+        //public Osoba(string imie, string nazwisko)
+        //{
+        //    Imie = imie;
+        //    Nazwisko = nazwisko;
+        //    Wiek = 0;
+        //}
+
         //konstruktor z trzema parametrami
-        public Osoba(string imie, string nazwisko, int wiek)
+        public Osoba(string imie = "Jan", string nazwisko = "Kot", int wiek = 0)
         {
             Imie = imie;
             Nazwisko = nazwisko;
