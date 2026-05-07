@@ -22,5 +22,21 @@ namespace Studenci_obiekty
             Wiek = wiek;
             oceny = new List<int>();
         }
+
+        //metoda dodająca ocenę do listy ocen
+        public void DodajOcene(int ocena)
+        {
+            if (ocena >=1 && ocena <= 6)
+            {
+                oceny.Add(ocena);
+            }
+            else
+            {
+                Console.WriteLine("Nieprawidłowa ocena. Ocena musi być między 1 a 6.");
+            }
+            
+        }
+
+
     }
 }
