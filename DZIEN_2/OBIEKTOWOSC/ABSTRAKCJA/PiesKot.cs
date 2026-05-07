@@ -26,4 +26,15 @@ namespace abstrakcja
             Console.WriteLine("Miau miau!");
         }
     }
+
+    class Pajak : Zwierze
+    {
+        public Pajak(string imie) : base(imie)
+        {
+        }
+        public override void WydajDzwiek()
+        {
+            return;
+    }
+}
 }
