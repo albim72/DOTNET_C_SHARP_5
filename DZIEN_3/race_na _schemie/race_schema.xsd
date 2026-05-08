@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Race">
+    <xs:complexType>
+      <xs:sequence>
+
+        <xs:element name="Name" type="xs:string"/>
+        <xs:element name="Year" type="xs:int"/>
+
+        <xs:element name="Location">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Country" type="xs:string"/>
+              <xs:element name="Region" type="xs:string"/>
+              <xs:element name="City" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="Runner">
+          <xs:complexType>
+            <xs:sequence>
+
+              <xs:element name="StartNumber" type="xs:int"/>
+
+              <xs:element name="PersonalData">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="FirstName" type="xs:string"/>
+                    <xs:element name="LastName" type="xs:string"/>
+
+                    <xs:element name="Address">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Street" type="xs:string"/>
+                          <xs:element name="PostalCode" type="xs:string"/>
+                          <xs:element name="City" type="xs:string"/>
+                          <xs:element name="Country" type="xs:string"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+
+              <xs:element name="Result">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="TotalTimeInMinutes" type="xs:int"/>
+                    <xs:element name="Status" type="xs:string"/>
+
+                    <xs:element name="Checkpoints">
+                      <xs:complexType>
+                        <xs:sequence>
+
+                          <xs:element name="Checkpoint" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Name" type="xs:string"/>
+                                <xs:element name="Kilometer" type="xs:int"/>
+                                <xs:element name="TimeInMinutes" type="xs:int"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
